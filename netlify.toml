@@ -1,0 +1,17 @@
+[build]
+  # If this folder is the git root, leave `base` unset.
+  # If the willow-os folder sits inside a larger repo, uncomment the next line:
+  # base = "willow-os"
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  # Pin Node so Netlify doesn't surprise us with a runtime bump.
+  NODE_VERSION = "20"
+  # Speed up cold builds; nothing here needs the Next.js telemetry phone-home.
+  NEXT_TELEMETRY_DISABLED = "1"
+
+# Netlify auto-installs @netlify/plugin-nextjs when it detects a Next.js
+# project, but pinning it makes the build deterministic.
+[[plugins]]
+  package = "@netlify/plugin-nextjs"

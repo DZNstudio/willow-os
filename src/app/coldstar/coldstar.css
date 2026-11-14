@@ -1,0 +1,315 @@
+/* ── Coldstar Design System ────────────────────────────────────── */
+
+.cs-page {
+  --cs-bg: #ffffff;
+  --cs-fg: #000000;
+  --cs-border: 1px solid var(--cs-fg);
+  --cs-font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --cs-spacing-xs: 0.5rem;
+  --cs-spacing-sm: 1rem;
+  --cs-spacing-md: 2rem;
+  --cs-spacing-lg: 4rem;
+  --cs-spacing-xl: 8rem;
+
+  background-color: var(--cs-bg);
+  color: var(--cs-fg);
+  font-family: var(--cs-font);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+.cs-page ::selection {
+  background-color: var(--cs-fg);
+  color: var(--cs-bg);
+}
+
+/* ── Layout ───────────────────────────────────────────────────── */
+
+.cs-site-wrapper {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  min-height: 100vh;
+  border-bottom: var(--cs-border);
+}
+
+/* ── Sidebar ──────────────────────────────────────────────────── */
+
+.cs-sidebar {
+  border-right: var(--cs-border);
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.cs-brand-header {
+  padding: var(--cs-spacing-md);
+  border-bottom: var(--cs-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cs-logo-mark {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+
+.cs-sys-code {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.cs-main-nav {
+  padding: var(--cs-spacing-md);
+  flex-grow: 1;
+}
+
+.cs-main-nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.cs-main-nav li {
+  border-bottom: var(--cs-border);
+}
+
+.cs-main-nav li:first-child {
+  border-top: var(--cs-border);
+}
+
+.cs-main-nav a {
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+  color: var(--cs-fg);
+  font-size: 1.125rem;
+  font-weight: 600;
+  padding: var(--cs-spacing-sm) 0;
+  letter-spacing: -0.01em;
+  transition: all 0.2s ease;
+}
+
+.cs-main-nav a:hover {
+  padding-left: var(--cs-spacing-xs);
+}
+
+.cs-nav-indicator {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.cs-main-nav a:hover .cs-nav-indicator {
+  opacity: 1;
+}
+
+/* ── Sidebar Meta ─────────────────────────────────────────────── */
+
+.cs-sidebar-meta {
+  padding: var(--cs-spacing-md);
+  border-top: var(--cs-border);
+  background-color: var(--cs-bg);
+}
+
+.cs-meta-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--cs-spacing-sm);
+}
+
+.cs-data-table {
+  width: 100%;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin-bottom: var(--cs-spacing-sm);
+}
+
+.cs-data-row {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  padding: 2px 0;
+}
+
+.cs-data-label {
+  font-weight: 600;
+}
+
+.cs-data-value {
+  font-weight: 400;
+}
+
+.cs-meta-desc {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  padding-top: var(--cs-spacing-sm);
+  border-top: var(--cs-border);
+}
+
+/* ── Top Bar ──────────────────────────────────────────────────── */
+
+.cs-top-bar {
+  height: 73px;
+  border-bottom: var(--cs-border);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 var(--cs-spacing-md);
+  gap: var(--cs-spacing-md);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.cs-top-bar-item {
+  display: flex;
+  align-items: center;
+  gap: var(--cs-spacing-xs);
+}
+
+/* ── Hero Section ─────────────────────────────────────────────── */
+
+.cs-content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.cs-hero-section {
+  padding: var(--cs-spacing-lg) var(--cs-spacing-md);
+  display: flex;
+  flex-direction: column;
+  border-bottom: var(--cs-border);
+}
+
+.cs-giant-text {
+  font-size: clamp(4rem, 12vw, 15rem);
+  font-weight: 700;
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  margin-bottom: var(--cs-spacing-lg);
+  text-transform: uppercase;
+}
+
+/* ── Schematic ────────────────────────────────────────────────── */
+
+.cs-schematic-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--cs-spacing-xl) 0;
+  position: relative;
+}
+
+.cs-schematic-svg {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+}
+
+.cs-schematic-label {
+  position: absolute;
+  bottom: var(--cs-spacing-md);
+  left: var(--cs-spacing-md);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.cs-schematic-controls {
+  position: absolute;
+  bottom: var(--cs-spacing-md);
+  right: var(--cs-spacing-md);
+  display: flex;
+  gap: var(--cs-spacing-sm);
+}
+
+.cs-icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+}
+
+.cs-icon-btn svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--cs-fg);
+  stroke-width: 1px;
+  fill: none;
+}
+
+/* ── Secondary Grid ───────────────────────────────────────────── */
+
+.cs-secondary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  flex-grow: 1;
+}
+
+.cs-grid-panel {
+  padding: var(--cs-spacing-md);
+}
+
+.cs-grid-panel:first-child {
+  border-right: var(--cs-border);
+}
+
+.cs-panel-header {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--cs-spacing-sm);
+}
+
+.cs-panel-text {
+  font-size: 1.125rem;
+  line-height: 1.5;
+  max-width: 90%;
+}
+
+.cs-panel-text p {
+  margin-bottom: var(--cs-spacing-sm);
+}
+
+/* ── Responsive ───────────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .cs-site-wrapper {
+    grid-template-columns: 280px 1fr;
+  }
+  .cs-secondary-grid {
+    grid-template-columns: 1fr;
+  }
+  .cs-grid-panel:first-child {
+    border-right: none;
+    border-bottom: var(--cs-border);
+  }
+}
+
+@media (max-width: 768px) {
+  .cs-site-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .cs-sidebar {
+    position: relative;
+    height: auto;
+    border-right: none;
+    border-bottom: var(--cs-border);
+  }
+  .cs-top-bar {
+    display: none;
+  }
+}
